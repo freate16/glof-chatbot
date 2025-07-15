@@ -1,0 +1,1624 @@
+@prefix : <http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@base <http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/> .
+
+<http://www.semanticweb.org/jay/ontologies/2024/8/GLO> rdf:type owl:Ontology ;
+                                                        owl:imports <http://www.w3.org/ns/ssn/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasLakeType
+:hasLakeType rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Population_Downstream
+:Population_Downstream rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :Socio-Economic_indicators .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Socio-Economic_indicators
+:Socio-Economic_indicators rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasCountry
+:hasCountry rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasGeographical> .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasCriticalInfrastructure
+:hasCriticalInfrastructure rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :Socio-Economic_indicators .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasDamTexture
+:hasDamTexture rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasHydrologicalProperties> .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasEarlyWarningSystem
+:hasEarlyWarningSystem rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :Socio-Economic_indicators .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasFloodDate
+:hasFloodDate rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasLandUsePattern
+:hasLandUsePattern rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :Socio-Economic_indicators .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasMountain_Range_Region
+:hasMountain_Range_Region rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf <http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasGeographical> .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasRiskLevel
+:hasRiskLevel rdf:type owl:ObjectProperty ;
+              rdfs:domain :GlacierLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasType
+:hasType rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :GlacierLake ;
+         rdfs:range :GlacierLake ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :hasType ;
+                      owl:someValuesFrom :GlacierLake
+                    ] .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasWatershed
+:hasWatershed rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasHydrologicalProperties> .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/haspastGLOFevent
+:haspastGLOFevent rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasHydrologicalProperties> .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasBasin
+<http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasBasin> rdf:type owl:ObjectProperty ;
+                                                                                rdfs:subPropertyOf <http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasHydrologicalProperties> .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasGeographical
+<http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasGeographical> rdf:type owl:ObjectProperty ;
+                                                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                       rdfs:domain :GlacierLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasHydrologicalProperties
+<http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasHydrologicalProperties> rdf:type owl:ObjectProperty ;
+                                                                                                 rdfs:domain :GlacierLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasRiver
+<http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasRiver> rdf:type owl:ObjectProperty ;
+                                                                                rdfs:subPropertyOf <http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasHydrologicalProperties> .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasSub-Basin
+<http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasSub-Basin> rdf:type owl:ObjectProperty ;
+                                                                                    rdfs:subPropertyOf <http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasHydrologicalProperties> .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasdistrict
+<http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasdistrict> rdf:type owl:ObjectProperty ;
+                                                                                   rdfs:subPropertyOf <http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasGeographical> .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasstate
+<http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasstate> rdf:type owl:ObjectProperty ;
+                                                                                rdfs:subPropertyOf <http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasGeographical> .
+
+
+###  http://www.w3.org/ns/sosa/actsOnProperty
+<http://www.w3.org/ns/sosa/actsOnProperty> rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Average_annual_precipitation
+:Average_annual_precipitation rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf :Meteorological_Properties ;
+                              rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Average_lake_depth
+:Average_lake_depth rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf :Lake_Characteristic_properties ;
+                    rdfs:label "Average Lake Depth" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Change_of_parent_glacier_volume
+:Change_of_parent_glacier_volume rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf :Glacier_Dynamic_Properties ;
+                                 rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Dam_Characteristics
+:Dam_Characteristics rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :GlacierLake ,
+                                 <http://www.w3.org/ns/sosa/ObservableProperty> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
+                                   owl:someValuesFrom :GlacierLake
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://www.w3.org/ns/sosa/isObservedBy> ;
+                                   owl:someValuesFrom <http://www.w3.org/ns/sosa/Sensor>
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://www.w3.org/ns/ssn/isPropertyOf> ;
+                                   owl:someValuesFrom <http://www.w3.org/ns/sosa/ObservableProperty>
+                                 ] .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Dam_height
+:Dam_height rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :Dam_Characteristics ;
+            rdfs:label "Dam Height" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Dam_width
+:Dam_width rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :Dam_Characteristics ;
+           rdfs:label "Dam Width" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Dam_width-height_ratio
+:Dam_width-height_ratio rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf :Dam_Characteristics ;
+                        rdfs:label "Dam Width Height Ratio" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Distance_between_lake_and_glacier_terminus
+:Distance_between_lake_and_glacier_terminus rdf:type owl:DatatypeProperty ;
+                                            rdfs:subPropertyOf :Glacier_Dynamic_Properties ;
+                                            rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Geographical_properties
+:Geographical_properties rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf owl:topDataProperty ;
+                         rdfs:domain [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://www.w3.org/ns/sosa/isFeatureOfInterestOf> ;
+                                       owl:someValuesFrom :GlacierLake
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://www.w3.org/ns/sosa/isObservedBy> ;
+                                       owl:someValuesFrom <http://www.w3.org/ns/sosa/Sensor>
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://www.w3.org/ns/ssn/hasProperty> ;
+                                       owl:someValuesFrom <http://www.w3.org/ns/sosa/ObservableProperty>
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :Geographical_properties ;
+                                       owl:someValuesFrom xsd:decimal
+                                     ] ;
+                         rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Glacier_Dynamic_Properties
+:Glacier_Dynamic_Properties rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Glacier_velocity
+:Glacier_velocity rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :Glacier_Dynamic_Properties ;
+                  rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_Area_After_Flood
+:Lake_Area_After_Flood rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf :Lake_Characteristic_properties .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_Characteristic_properties
+:Lake_Characteristic_properties rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_area
+:Lake_area rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :Lake_Characteristic_properties ;
+           rdfs:label "Area of Lake" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_elevation
+:Lake_elevation rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :Lake_Characteristic_properties ;
+                rdfs:label "Lake Elevation" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_expansion_rate
+:Lake_expansion_rate rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf :Lake_Characteristic_properties ;
+                     rdfs:label "Lake Exapnsion Rate" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_perimeter
+:Lake_perimeter rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :Lake_Characteristic_properties ;
+                rdfs:label "Lake Perimeter" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_perimeter_After_Flood
+:Lake_perimeter_After_Flood rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf :Lake_Characteristic_properties .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_volume
+:Lake_volume rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :Lake_Characteristic_properties ;
+             rdfs:label "Lake Volume" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Mean_annual_air_temperature
+:Mean_annual_air_temperature rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf :Meteorological_Properties ;
+                             rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Meteorological_Properties
+:Meteorological_Properties rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/NonGlacierizedAreasAroundLake
+:NonGlacierizedAreasAroundLake rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf :Lake_Characteristic_properties ;
+                               rdfs:domain :GlacierLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/ParentGlacierSlope
+:ParentGlacierSlope rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf :Lake_Characteristic_properties ;
+                    rdfs:domain :GlacierLake ;
+                    rdfs:label "Slope of Parent Glacier" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Parent_glacier_snout_steepness
+:Parent_glacier_snout_steepness rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf :Glacier_Dynamic_Properties ;
+                                rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Population_Downstream
+:Population_Downstream rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Proximity_to_hanging_glaciers
+:Proximity_to_hanging_glaciers rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf :Glacier_Dynamic_Properties ;
+                               rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Proximity_to_parent_glacier
+:Proximity_to_parent_glacier rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf :Lake_Characteristic_properties ;
+                             rdfs:label "Proximity to Parent Glacier" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/SlopeOfLakeDam
+:SlopeOfLakeDam rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :Dam_Characteristics ;
+                rdfs:domain :GlacierLake ;
+                rdfs:label "Slope of Dam" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Slope_between_lake_and_glacier
+:Slope_between_lake_and_glacier rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf :Glacier_Dynamic_Properties ;
+                                rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Socio-Economic_indicators
+:Socio-Economic_indicators rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Temperature_change_rate
+:Temperature_change_rate rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf :Meteorological_Properties ;
+                         rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Watershed_area
+:Watershed_area rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :Lake_Characteristic_properties ;
+                rdfs:label "Watershead Area" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Width_of_the_lake
+:Width_of_the_lake rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf :Lake_Characteristic_properties ;
+                   rdfs:label "Width of the Lake" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasDGGSCell
+:hasDGGSCell rdf:type owl:DatatypeProperty ;
+             rdfs:domain :GlacierLake ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasFloodDate
+:hasFloodDate rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasLatitude
+:hasLatitude rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :Geographical_properties ;
+             rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/hasLongitude
+:hasLongitude rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :Geographical_properties ;
+              rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#Geometrical
+<http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#Geometrical> rdf:type owl:DatatypeProperty ;
+                                                                                   rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                   rdfs:domain [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
+                                                                                                 owl:someValuesFrom :GlacierLake
+                                                                                               ] ,
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <http://www.w3.org/ns/sosa/isObservedBy> ;
+                                                                                                 owl:someValuesFrom <http://www.w3.org/ns/sosa/Sensor>
+                                                                                               ] ,
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <http://www.w3.org/ns/ssn/isPropertyOf> ;
+                                                                                                 owl:someValuesFrom <http://www.w3.org/ns/sosa/ObservableProperty>
+                                                                                               ] .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasMax_Length
+<http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasMax_Length> rdf:type owl:DatatypeProperty ;
+                                                                                     rdfs:subPropertyOf <http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#Geometrical> ;
+                                                                                     rdfs:domain :GlacierLake ,
+                                                                                                 :HighRisk ,
+                                                                                                 :LowRisk ,
+                                                                                                 :MediumRisk ,
+                                                                                                 :VeryHighRisk ,
+                                                                                                 :VeryLowRisk .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasMean_Width
+<http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasMean_Width> rdf:type owl:DatatypeProperty ;
+                                                                                     rdfs:subPropertyOf <http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#Geometrical> .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasSurface_Area
+<http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasSurface_Area> rdf:type owl:DatatypeProperty ;
+                                                                                       rdfs:subPropertyOf <http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#Geometrical> .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasVolume
+<http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#hasVolume> rdf:type owl:DatatypeProperty ;
+                                                                                 rdfs:subPropertyOf <http://www.semanticweb.org/jay/ontologies/2024/8/untitled-ontology-3#Geometrical> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/AdvancingGlacierBlockedLake
+:AdvancingGlacierBlockedLake rdf:type owl:Class ;
+                             rdfs:subClassOf :IceBlockedLake ;
+                             owl:disjointWith :OtherGlacierBlockedLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/CirqueLake
+:CirqueLake rdf:type owl:Class ;
+            rdfs:subClassOf :GlacialErosionLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Dam_Failure
+:Dam_Failure rdf:type owl:Class ;
+             rdfs:subClassOf :Warning_Event .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Earthquake
+:Earthquake rdf:type owl:Class ;
+            rdfs:subClassOf :Warning_Event .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/EndMoraineDammedLake
+:EndMoraineDammedLake rdf:type owl:Class ;
+                      rdfs:subClassOf :MoraineDammedLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/GlacialErosionLake
+:GlacialErosionLake rdf:type owl:Class ;
+                    rdfs:subClassOf :GlacierLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/GlacialValleyLake
+:GlacialValleyLake rdf:type owl:Class ;
+                   rdfs:subClassOf :GlacialErosionLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/GlacierLake
+:GlacierLake rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Glacier_Ice_Avalanche
+:Glacier_Ice_Avalanche rdf:type owl:Class ;
+                       rdfs:subClassOf :Warning_Event .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/HighRisk
+:HighRisk rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :GlacierLake
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :Lake_elevation ;
+                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                            owl:onDatatype xsd:decimal ;
+                                                                            owl:withRestrictions ( [ xsd:minInclusive 4800.0
+                                                                                                   ]
+                                                                                                   [ xsd:maxInclusive 5100.0
+                                                                                                   ]
+                                                                                                 )
+                                                                          ]
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :Lake_expansion_rate ;
+                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                            owl:onDatatype xsd:decimal ;
+                                                                            owl:withRestrictions ( [ xsd:minInclusive 1.5
+                                                                                                   ]
+                                                                                                   [ xsd:maxInclusive 3.0
+                                                                                                   ]
+                                                                                                 )
+                                                                          ]
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :Lake_perimeter ;
+                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                            owl:onDatatype xsd:decimal ;
+                                                                            owl:withRestrictions ( [ xsd:minInclusive 1.5
+                                                                                                   ]
+                                                                                                   [ xsd:maxInclusive 3.0
+                                                                                                   ]
+                                                                                                 )
+                                                                          ]
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :ParentGlacierSlope ;
+                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                            owl:onDatatype xsd:decimal ;
+                                                                            owl:withRestrictions ( [ xsd:minInclusive 15.0
+                                                                                                   ]
+                                                                                                   [ xsd:maxInclusive 25.0
+                                                                                                   ]
+                                                                                                 )
+                                                                          ]
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :SlopeOfLakeDam ;
+                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                            owl:onDatatype xsd:decimal ;
+                                                                            owl:withRestrictions ( [ xsd:minInclusive 5.0
+                                                                                                   ]
+                                                                                                   [ xsd:maxInclusive 15.0
+                                                                                                   ]
+                                                                                                 )
+                                                                          ]
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :Watershed_area ;
+                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                            owl:onDatatype xsd:decimal ;
+                                                                            owl:withRestrictions ( [ xsd:minInclusive 5.0
+                                                                                                   ]
+                                                                                                   [ xsd:maxInclusive 8.0
+                                                                                                   ]
+                                                                                                 )
+                                                                          ]
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/IceBlockedLake
+:IceBlockedLake rdf:type owl:Class ;
+                rdfs:subClassOf :GlacierLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Intense_Precipitation
+:Intense_Precipitation rdf:type owl:Class ;
+                       rdfs:subClassOf :Warning_Event .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/LateralMoraineDammedLake
+:LateralMoraineDammedLake rdf:type owl:Class ;
+                          rdfs:subClassOf :MoraineDammedLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/LowRisk
+:LowRisk rdf:type owl:Class ;
+         owl:equivalentClass [ owl:intersectionOf ( :GlacierLake
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :Lake_elevation ;
+                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                           owl:onDatatype xsd:decimal ;
+                                                                           owl:withRestrictions ( [ xsd:minInclusive 5000.0
+                                                                                                  ]
+                                                                                                  [ xsd:maxInclusive 5300.0
+                                                                                                  ]
+                                                                                                )
+                                                                         ]
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :Lake_expansion_rate ;
+                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                           owl:onDatatype xsd:decimal ;
+                                                                           owl:withRestrictions ( [ xsd:maxInclusive 0.3
+                                                                                                  ]
+                                                                                                )
+                                                                         ]
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :Lake_perimeter ;
+                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                           owl:onDatatype xsd:decimal ;
+                                                                           owl:withRestrictions ( [ xsd:maxInclusive 0.8
+                                                                                                  ]
+                                                                                                )
+                                                                         ]
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :ParentGlacierSlope ;
+                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                           owl:onDatatype xsd:decimal ;
+                                                                           owl:withRestrictions ( [ xsd:minInclusive 12.0
+                                                                                                  ]
+                                                                                                  [ xsd:maxInclusive 18.0
+                                                                                                  ]
+                                                                                                )
+                                                                         ]
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :SlopeOfLakeDam ;
+                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                           owl:onDatatype xsd:decimal ;
+                                                                           owl:withRestrictions ( [ xsd:minInclusive 6.0
+                                                                                                  ]
+                                                                                                  [ xsd:maxInclusive 13.0
+                                                                                                  ]
+                                                                                                )
+                                                                         ]
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :Watershed_area ;
+                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                           owl:onDatatype xsd:decimal ;
+                                                                           owl:withRestrictions ( [ xsd:maxInclusive 0.5
+                                                                                                  ]
+                                                                                                )
+                                                                         ]
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/MediumRisk
+:MediumRisk rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :GlacierLake
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :Lake_elevation ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:decimal ;
+                                                                              owl:withRestrictions ( [ xsd:minInclusive 4900.0
+                                                                                                     ]
+                                                                                                     [ xsd:maxInclusive 5200.0
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :Lake_expansion_rate ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:decimal ;
+                                                                              owl:withRestrictions ( [ xsd:maxInclusive 0.5
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :Lake_perimeter ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:decimal ;
+                                                                              owl:withRestrictions ( [ xsd:minInclusive 1.0
+                                                                                                     ]
+                                                                                                     [ xsd:maxInclusive 1.5
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :ParentGlacierSlope ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:decimal ;
+                                                                              owl:withRestrictions ( [ xsd:minInclusive 18.0
+                                                                                                     ]
+                                                                                                     [ xsd:maxInclusive 28.0
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :SlopeOfLakeDam ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:decimal ;
+                                                                              owl:withRestrictions ( [ xsd:minInclusive 8.0
+                                                                                                     ]
+                                                                                                     [ xsd:maxInclusive 18.0
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :Watershed_area ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:decimal ;
+                                                                              owl:withRestrictions ( [ xsd:maxInclusive 0.8
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/MoraineDammedLake
+:MoraineDammedLake rdf:type owl:Class ;
+                   rdfs:subClassOf :GlacierLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/MoraineThawLake
+:MoraineThawLake rdf:type owl:Class ;
+                 rdfs:subClassOf :MoraineDammedLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/OtherGlacialErosionLake
+:OtherGlacialErosionLake rdf:type owl:Class ;
+                         rdfs:subClassOf :GlacialErosionLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/OtherGlacialLake
+:OtherGlacialLake rdf:type owl:Class ;
+                  rdfs:subClassOf :GlacierLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/OtherGlacierBlockedLake
+:OtherGlacierBlockedLake rdf:type owl:Class ;
+                         rdfs:subClassOf :IceBlockedLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Severe_Temperature_Rise
+:Severe_Temperature_Rise rdf:type owl:Class ;
+                         rdfs:subClassOf :Warning_Event .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/SubglacialLake
+:SubglacialLake rdf:type owl:Class ;
+                rdfs:subClassOf :GlacierLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/SupraglacialLake
+:SupraglacialLake rdf:type owl:Class ;
+                  rdfs:subClassOf :GlacierLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/VeryHighRisk
+:VeryHighRisk rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( :GlacierLake
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :Lake_elevation ;
+                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                owl:onDatatype xsd:decimal ;
+                                                                                owl:withRestrictions ( [ xsd:minInclusive 5000.0
+                                                                                                       ]
+                                                                                                     )
+                                                                              ]
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :Lake_expansion_rate ;
+                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                owl:onDatatype xsd:decimal ;
+                                                                                owl:withRestrictions ( [ xsd:minInclusive 3.0
+                                                                                                       ]
+                                                                                                     )
+                                                                              ]
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :Lake_perimeter ;
+                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                owl:onDatatype xsd:decimal ;
+                                                                                owl:withRestrictions ( [ xsd:minInclusive 3.0
+                                                                                                       ]
+                                                                                                     )
+                                                                              ]
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :ParentGlacierSlope ;
+                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                owl:onDatatype xsd:decimal ;
+                                                                                owl:withRestrictions ( [ xsd:minInclusive 25.0
+                                                                                                       ]
+                                                                                                     )
+                                                                              ]
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :SlopeOfLakeDam ;
+                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                owl:onDatatype xsd:decimal ;
+                                                                                owl:withRestrictions ( [ xsd:minInclusive 18.0
+                                                                                                       ]
+                                                                                                     )
+                                                                              ]
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/VeryLowRisk
+:VeryLowRisk rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :GlacierLake
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :Lake_elevation ;
+                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                               owl:onDatatype xsd:decimal ;
+                                                                               owl:withRestrictions ( [ xsd:minInclusive 5200.0
+                                                                                                      ]
+                                                                                                    )
+                                                                             ]
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :Lake_expansion_rate ;
+                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                               owl:onDatatype xsd:decimal ;
+                                                                               owl:withRestrictions ( [ xsd:maxInclusive 0.1
+                                                                                                      ]
+                                                                                                    )
+                                                                             ]
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :Lake_perimeter ;
+                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                               owl:onDatatype xsd:decimal ;
+                                                                               owl:withRestrictions ( [ xsd:maxInclusive 0.5
+                                                                                                      ]
+                                                                                                    )
+                                                                             ]
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :ParentGlacierSlope ;
+                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                               owl:onDatatype xsd:decimal ;
+                                                                               owl:withRestrictions ( [ xsd:maxInclusive 8.0
+                                                                                                      ]
+                                                                                                    )
+                                                                             ]
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :SlopeOfLakeDam ;
+                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                               owl:onDatatype xsd:decimal ;
+                                                                               owl:withRestrictions ( [ xsd:minInclusive 5.0
+                                                                                                      ]
+                                                                                                      [ xsd:maxInclusive 10.0
+                                                                                                      ]
+                                                                                                    )
+                                                                             ]
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :Watershed_area ;
+                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                               owl:onDatatype xsd:decimal ;
+                                                                               owl:withRestrictions ( [ xsd:maxInclusive 0.2
+                                                                                                      ]
+                                                                                                    )
+                                                                             ]
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Warning_Event
+:Warning_Event rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Chhatteboi
+:Chhatteboi rdf:type owl:NamedIndividual ,
+                     :IceBlockedLake ;
+            :hasCountry :Pakistan ;
+            :hasMountain_Range_Region :Karakoram ;
+            :Lake_Area_After_Flood 1607.0 ;
+            :Lake_area 12776.0 ;
+            :Lake_perimeter 456.0 ;
+            :Lake_perimeter_After_Flood 173.0 ;
+            :hasFloodDate "2004-06-12"^^xsd:date ;
+            :hasLatitude 36.84 ;
+            :hasLongitude 73.92 ;
+            rdfs:comment "NA" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/China
+:China rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Dasht_Glacier
+:Dasht_Glacier rdf:type owl:NamedIndividual ,
+                        :SupraglacialLake ;
+               :hasCountry :Kyrgyzstan ;
+               :hasMountain_Range_Region :Karakoram ;
+               :Lake_Area_After_Flood 3156.0 ;
+               :Lake_area 50137.0 ;
+               :Lake_perimeter 889.0 ;
+               :Lake_perimeter_After_Flood 225.0 ;
+               :hasFloodDate "2002-08-07"^^xsd:date ;
+               :hasLatitude 37.220393 ;
+               :hasLongitude 71.733867 ;
+               rdfs:comment "caused death of 23 people, 75 houses destroyed" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/E_Himalaya
+:E_Himalaya rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Gongbatongsha_Tsho
+:Gongbatongsha_Tsho rdf:type owl:NamedIndividual ,
+                             :MoraineDammedLake ;
+                    :hasCountry :China ;
+                    :hasMountain_Range_Region :E_Himalaya ;
+                    :Lake_Area_After_Flood 1844.0 ;
+                    :Lake_area 10738.0 ;
+                    :Lake_perimeter 454.0 ;
+                    :Lake_perimeter_After_Flood 186.0 ;
+                    :hasFloodDate "2016-07-07"^^xsd:date ;
+                    :hasLatitude 28.07817 ;
+                    :hasLongitude 86.063866 ;
+                    rdfs:comment "Impact: Hydropower station damaged" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Gya
+:Gya rdf:type owl:NamedIndividual ,
+              :GlacierLake ;
+     :Lake_area 107460 ;
+     :Lake_expansion_rate 29.50 ;
+     :Lake_perimeter 1598 ;
+     :hasLatitude 33.62 ;
+     :hasLongitude 77.61 .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/India
+:India rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Karakoram
+:Karakoram rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Karatekelake
+:Karatekelake rdf:type owl:NamedIndividual ,
+                       :MoraineDammedLake ;
+              :hasCountry :Kyrgyzstan ;
+              :hasMountain_Range_Region :W_Tien_Shan ;
+              :Lake_Area_After_Flood 1754.0 ;
+              :Lake_area 18978.0 ;
+              :Lake_perimeter 615.0 ;
+              :Lake_perimeter_After_Flood 160.0 ;
+              :hasFloodDate "2014-07-17"^^xsd:date ;
+              :hasLatitude 41.97345 ;
+              :hasLongitude 76.828337 ;
+              rdfs:comment "Impact: damaged several houses, the road and the electric power line” - Medeu et al. (2019)" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Kyrgyzstan
+:Kyrgyzstan rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/L2
+:L2 rdf:type owl:NamedIndividual ,
+             :GlacierLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/L3
+:L3 rdf:type owl:NamedIndividual ,
+             :GlacierLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/L4
+:L4 rdf:type owl:NamedIndividual ,
+             :GlacierLake .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G076379E33807N
+:Lake_G076379E33807N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 4965 ;
+                     :Lake_expansion_rate 2.1 ;
+                     :Lake_perimeter 1.6 ;
+                     :ParentGlacierSlope 23.9 ;
+                     :SlopeOfLakeDam 11.8 ;
+                     :Watershed_area 7.5 ;
+                     :hasLatitude 33.81142 ;
+                     :hasLongitude 76.389706 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G076733E34586N
+:Lake_G076733E34586N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 5120 ;
+                     :Lake_expansion_rate 2.7 ;
+                     :Lake_perimeter 1.8 ;
+                     :ParentGlacierSlope 25.6 ;
+                     :SlopeOfLakeDam 13.0 ;
+                     :Watershed_area 6.9 ;
+                     :hasLatitude 34.588 ;
+                     :hasLongitude 76.733 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G076750E32205N
+:Lake_G076750E32205N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 4120 ;
+                     :Lake_expansion_rate 1.9 ;
+                     :Lake_perimeter 1.4 ;
+                     :ParentGlacierSlope 22.8 ;
+                     :SlopeOfLakeDam 10.9 ;
+                     :Watershed_area 6.8 ;
+                     :hasLatitude 32.210397 ;
+                     :hasLongitude 76.744014 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G076750E33021N
+:Lake_G076750E33021N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 5000 ;
+                     :Lake_expansion_rate 2.4 ;
+                     :Lake_perimeter 2.2 ;
+                     :ParentGlacierSlope 24.7 ;
+                     :SlopeOfLakeDam 12.1 ;
+                     :Watershed_area 9.0 ;
+                     :hasLatitude 33.020461 ;
+                     :hasLongitude 76.742032 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G076758E32541N
+:Lake_G076758E32541N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 4457 ;
+                     :Lake_expansion_rate 2.3 ;
+                     :Lake_perimeter 1.9 ;
+                     :ParentGlacierSlope 23.5 ;
+                     :SlopeOfLakeDam 11.4 ;
+                     :Watershed_area 7.2 ;
+                     :hasLatitude 32.538097 ;
+                     :hasLongitude 76.748413 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G076823E32215N
+:Lake_G076823E32215N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 4183 ;
+                     :Lake_expansion_rate 2.0 ;
+                     :Lake_perimeter 1.5 ;
+                     :ParentGlacierSlope 21.9 ;
+                     :SlopeOfLakeDam 10.6 ;
+                     :Watershed_area 6.4 ;
+                     :hasLatitude 32.223025 ;
+                     :hasLongitude 76.822475 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G076961E34458N
+:Lake_G076961E34458N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 5117 ;
+                     :Lake_expansion_rate 2.6 ;
+                     :Lake_perimeter 2.3 ;
+                     :ParentGlacierSlope 28.5 ;
+                     :SlopeOfLakeDam 10.5 ;
+                     :Watershed_area 8.12 ;
+                     :hasLatitude 34.467 ;
+                     :hasLongitude 76.963 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G077308E35254N
+:Lake_G077308E35254N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 4400 ;
+                     :Lake_expansion_rate 2.7 ;
+                     :Lake_perimeter 3.2 ;
+                     :ParentGlacierSlope 28.1 ;
+                     :SlopeOfLakeDam 14.0 ;
+                     :Watershed_area 11.4 ;
+                     :hasLatitude 35.254 ;
+                     :hasLongitude 77.308 ;
+                     :hasLakeType :Icedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G077336E35311N
+:Lake_G077336E35311N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 4400 ;
+                     :Lake_expansion_rate 2.85 ;
+                     :Lake_perimeter 0.25 ;
+                     :ParentGlacierSlope 15.8 ;
+                     :SlopeOfLakeDam 13.9 ;
+                     :Watershed_area 1.56 ;
+                     :hasLatitude 35.254 ;
+                     :hasLongitude 77.308 ;
+                     :hasLakeType :Icedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G077422E33993N
+:Lake_G077422E33993N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 5254 ;
+                     :Lake_expansion_rate 2.5 ;
+                     :Lake_perimeter 2.1 ;
+                     :ParentGlacierSlope 24.3 ;
+                     :SlopeOfLakeDam 14.2 ;
+                     :Watershed_area 8.7 ;
+                     :hasLatitude 33.999709 ;
+                     :hasLongitude 77.422315 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G077428E35296N
+:Lake_G077428E35296N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 5100 ;
+                     :Lake_expansion_rate 2.2 ;
+                     :Lake_perimeter 1.7 ,
+                                     2.43 ;
+                     :ParentGlacierSlope 22.2 ,
+                                         26.4 ;
+                     :SlopeOfLakeDam 13.5 ,
+                                     5.7 ;
+                     :Watershed_area 10.3 ,
+                                     7.1 ;
+                     :hasLatitude 35.418 ;
+                     :hasLongitude 77.606 ;
+                     :hasLakeType :Icedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G077449E34305N
+:Lake_G077449E34305N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 5145 ;
+                     :Lake_expansion_rate 1.5 ;
+                     :Lake_perimeter 0.4 ;
+                     :ParentGlacierSlope 14.5 ;
+                     :SlopeOfLakeDam 15.1 ;
+                     :Watershed_area 3.91 ;
+                     :hasLatitude 34.317 ;
+                     :hasLongitude 77.441 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G077606E35418N
+:Lake_G077606E35418N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 5100 ;
+                     :Lake_expansion_rate 3.0 ;
+                     :Lake_perimeter 3.3 ;
+                     :ParentGlacierSlope 29.2 ;
+                     :SlopeOfLakeDam 11.2 ;
+                     :Watershed_area 9.7 ;
+                     :hasLatitude 35.418 ;
+                     :hasLongitude 77.606 ;
+                     :hasLakeType :Icedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G077611E33611N
+:Lake_G077611E33611N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 5411 ;
+                     :Lake_expansion_rate 3.0 ;
+                     :Lake_perimeter 2.5 ;
+                     :ParentGlacierSlope 27.1 ;
+                     :SlopeOfLakeDam 11.6 ;
+                     :Watershed_area 9.3 ;
+                     :hasLatitude 33.620431 ;
+                     :hasLongitude 77.613127 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G077657E35156N
+:Lake_G077657E35156N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 4691 ;
+                     :Lake_expansion_rate 1.8 ;
+                     :Lake_perimeter 2.11 ;
+                     :ParentGlacierSlope 12.8 ;
+                     :SlopeOfLakeDam 14.1 ;
+                     :Watershed_area 6.66 ;
+                     :hasLatitude 35.172 ;
+                     :hasLongitude 77.702 ;
+                     :hasLakeType :Icedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G077662E35097N
+:Lake_G077662E35097N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 4613 ;
+                     :Lake_expansion_rate 0.48 ;
+                     :Lake_perimeter 0.69 ;
+                     :ParentGlacierSlope 15.8 ;
+                     :SlopeOfLakeDam 7.6 ;
+                     :Watershed_area 1.92 ;
+                     :hasLatitude 35.128 ;
+                     :hasLongitude 77.763 ;
+                     :hasLakeType :Icedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G077667E35058N
+:Lake_G077667E35058N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 4581 ;
+                     :Lake_expansion_rate 0.48 ;
+                     :Lake_perimeter 0.62 ;
+                     :ParentGlacierSlope 17.3 ;
+                     :SlopeOfLakeDam 6.0 ;
+                     :Watershed_area 7.48 ;
+                     :hasLatitude 35.102 ;
+                     :hasLongitude 77.774 ;
+                     :hasLakeType :Icedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G077763E35128N
+:Lake_G077763E35128N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 4613 ;
+                     :Lake_expansion_rate 2.9 ;
+                     :Lake_perimeter 2.6 ;
+                     :ParentGlacierSlope 27.5 ;
+                     :SlopeOfLakeDam 10.1 ;
+                     :Watershed_area 12.2 ;
+                     :hasLatitude 35.128 ;
+                     :hasLongitude 77.763 ;
+                     :hasLakeType :Icedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G077774E35102N
+:Lake_G077774E35102N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 4581 ;
+                     :Lake_expansion_rate 1.9 ;
+                     :Lake_perimeter 2.1 ;
+                     :ParentGlacierSlope 26.1 ;
+                     :SlopeOfLakeDam 9.3 ;
+                     :Watershed_area 8.9 ;
+                     :hasLatitude 35.102 ;
+                     :hasLongitude 77.774 ;
+                     :hasLakeType :Icedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G078111E31754N
+:Lake_G078111E31754N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 4959 ;
+                     :Lake_expansion_rate 2.6 ;
+                     :Lake_perimeter 2.3 ;
+                     :ParentGlacierSlope 25.0 ;
+                     :SlopeOfLakeDam 13.8 ;
+                     :Watershed_area 8.2 ;
+                     :hasLatitude 31.748786 ;
+                     :hasLongitude 78.116984 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G078325E33952N
+:Lake_G078325E33952N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 5448 ;
+                     :Lake_expansion_rate 3.2 ;
+                     :Lake_perimeter 2.8 ;
+                     :ParentGlacierSlope 27.7 ;
+                     :SlopeOfLakeDam 15.1 ;
+                     :Watershed_area 9.6 ;
+                     :hasLatitude 33.956301 ;
+                     :hasLongitude 78.333376 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G078445E33108N
+:Lake_G078445E33108N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 5597 ;
+                     :Lake_expansion_rate 2.8 ;
+                     :Lake_perimeter 2.0 ;
+                     :ParentGlacierSlope 26.0 ;
+                     :SlopeOfLakeDam 12.9 ;
+                     :Watershed_area 8.9 ;
+                     :hasLatitude 33.12619 ;
+                     :hasLongitude 78.412649 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G078471E33043N
+:Lake_G078471E33043N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 5766 ;
+                     :Lake_expansion_rate 0.18 ;
+                     :Lake_perimeter 0.62 ;
+                     :ParentGlacierSlope 19.1 ;
+                     :SlopeOfLakeDam 19.2 ;
+                     :Watershed_area 0.61 ;
+                     :hasLatitude 33.033 ;
+                     :hasLongitude 78.484 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G079046E30771N
+:Lake_G079046E30771N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 3841 ;
+                     :Lake_expansion_rate 1.13 ,
+                                          2.6 ;
+                     :Lake_perimeter 1.83 ,
+                                     1.9 ;
+                     :ParentGlacierSlope 18.6 ,
+                                         28.3 ;
+                     :SlopeOfLakeDam 12.2 ,
+                                     12.7 ;
+                     :Watershed_area 4.64 ,
+                                     8.4 ;
+                     :hasLatitude 30.747 ;
+                     :hasLongitude 79.064 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_G079064E30747N
+:Lake_G079064E30747N rdf:type owl:NamedIndividual ,
+                              :GlacierLake ;
+                     :Lake_elevation 3841 ;
+                     :Lake_expansion_rate 2.1 ;
+                     :Lake_perimeter 2.8 ;
+                     :ParentGlacierSlope 25.4 ;
+                     :SlopeOfLakeDam 12.3 ;
+                     :Watershed_area 10.5 ;
+                     :hasLatitude 30.747 ;
+                     :hasLongitude 79.064 ;
+                     :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_HR1
+:Lake_HR1 rdf:type owl:NamedIndividual ,
+                   :GlacierLake ;
+          :Lake_elevation 4900 ;
+          :Lake_expansion_rate 2.2 ;
+          :Lake_perimeter 2.6 ;
+          :ParentGlacierSlope 17.4 ;
+          :SlopeOfLakeDam 13.6 ;
+          :Watershed_area 6.1 ;
+          :hasLatitude 32.8745 ;
+          :hasLongitude 78.0052 ;
+          :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_HR2
+:Lake_HR2 rdf:type owl:NamedIndividual ,
+                   :GlacierLake ;
+          :Lake_elevation 5075 ;
+          :Lake_expansion_rate 2.9 ;
+          :Lake_perimeter 2.8 ;
+          :ParentGlacierSlope 19.9 ;
+          :SlopeOfLakeDam 12.5 ;
+          :Watershed_area 7.8 ;
+          :hasLatitude 31.9123 ;
+          :hasLongitude 77.8942 ;
+          :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_LR1
+:Lake_LR1 rdf:type owl:NamedIndividual ,
+                   :GlacierLake ;
+          :Lake_elevation 5060 ;
+          :Lake_expansion_rate 0.25 ;
+          :Lake_perimeter 0.7 ;
+          :ParentGlacierSlope 14.5 ;
+          :SlopeOfLakeDam 10.2 ;
+          :Watershed_area 0.3 ;
+          :hasLatitude 34.5002 ;
+          :hasLongitude 76.7323 ;
+          :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_LR2
+:Lake_LR2 rdf:type owl:NamedIndividual ,
+                   :GlacierLake ;
+          :Lake_elevation 5020 ;
+          :Lake_expansion_rate 0.3 ;
+          :Lake_perimeter 0.8 ;
+          :ParentGlacierSlope 16.7 ;
+          :SlopeOfLakeDam 11.3 ;
+          :Watershed_area 0.45 ;
+          :hasLatitude 33.8894 ;
+          :hasLongitude 77.2983 ;
+          :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_MR1
+:Lake_MR1 rdf:type owl:NamedIndividual ,
+                   :GlacierLake ;
+          :Lake_elevation 4950 ;
+          :Lake_expansion_rate 0.45 ;
+          :Lake_perimeter 1.3 ;
+          :ParentGlacierSlope 22.4 ;
+          :SlopeOfLakeDam 12.7 ;
+          :Watershed_area 0.6 ;
+          :hasLatitude 33.7823 ;
+          :hasLongitude 77.6882 ;
+          :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_MR2
+:Lake_MR2 rdf:type owl:NamedIndividual ,
+                   :GlacierLake ;
+          :Lake_elevation 4980 ;
+          :Lake_expansion_rate 0.5 ;
+          :Lake_perimeter 1.2 ;
+          :ParentGlacierSlope 20.1 ;
+          :SlopeOfLakeDam 10.8 ;
+          :Watershed_area 0.75 ;
+          :hasLatitude 32.9145 ;
+          :hasLongitude 78.1415 ;
+          :hasLakeType :Icedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_VHR1
+:Lake_VHR1 rdf:type owl:NamedIndividual ,
+                    :GlacierLake ;
+           :Lake_elevation 5255 ;
+           :Lake_expansion_rate 3.5 ;
+           :Lake_perimeter 3.4 ;
+           :ParentGlacierSlope 27.8 ;
+           :SlopeOfLakeDam 20.5 ;
+           :Watershed_area 9.1 ;
+           :hasLatitude 31.4012 ;
+           :hasLongitude 78.6052 ;
+           :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_VHR2
+:Lake_VHR2 rdf:type owl:NamedIndividual ,
+                    :GlacierLake ;
+           :Lake_elevation 5300 ;
+           :Lake_expansion_rate 3.8 ;
+           :Lake_perimeter 3.1 ;
+           :ParentGlacierSlope 30.2 ;
+           :SlopeOfLakeDam 22.3 ;
+           :Watershed_area 10.4 ;
+           :hasLatitude 30.9994 ;
+           :hasLongitude 79.2015 ;
+           :hasLakeType :Icedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_VLR1
+:Lake_VLR1 rdf:type owl:NamedIndividual ,
+                    :GlacierLake ;
+           :Lake_elevation 5230 ;
+           :Lake_expansion_rate 0.08 ;
+           :Lake_perimeter 0.4 ;
+           :ParentGlacierSlope 7.5 ;
+           :SlopeOfLakeDam 6.0 ;
+           :Watershed_area 0.1 ;
+           :hasLatitude 35.1245 ;
+           :hasLongitude 77.4512 ;
+           :hasLakeType :Morainedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lake_VLR2
+:Lake_VLR2 rdf:type owl:NamedIndividual ,
+                    :GlacierLake ;
+           :Lake_elevation 5280 ;
+           :Lake_expansion_rate 0.05 ;
+           :Lake_perimeter 0.3 ;
+           :ParentGlacierSlope 6.8 ;
+           :SlopeOfLakeDam 9.2 ;
+           :Watershed_area 0.15 ;
+           :hasLatitude 34.8762 ;
+           :hasLongitude 78.0021 ;
+           :hasLakeType :Icedammed .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lhotse
+:Lhotse rdf:type owl:NamedIndividual ,
+                 :SupraglacialLake ;
+        :hasCountry :Nepal ;
+        :hasMountain_Range_Region :E_Himalaya ;
+        :Lake_area 10697.0 ;
+        :Lake_perimeter 478.0 ;
+        :hasFloodDate "2016-06-12"^^xsd:date ;
+        :hasLatitude 27.90556 ;
+        :hasLongitude 86.89083 ;
+        rdfs:comment "Loss of a pedestrian bridge & an out-building; small amounts of floodwater in the courtyard of one lodge. Satellite imagery analysis revealed subsurface water contribution." .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Lokpar-Aling
+:Lokpar-Aling rdf:type owl:NamedIndividual ,
+                       :IceBlockedLake ;
+              :hasCountry :Pakistan ;
+              :hasMountain_Range_Region :Karakoram ;
+              :Lake_Area_After_Flood 6574.0 ;
+              :Lake_area 28311.0 ;
+              :Lake_perimeter 767.0 ;
+              :Lake_perimeter_After_Flood 324.0 ;
+              :hasLatitude 35.494534 ;
+              :hasLongitude 76.243465 ;
+              rdfs:comment "NA" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Nepal
+:Nepal rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Nidder
+:Nidder rdf:type owl:NamedIndividual ,
+                 :MoraineDammedLake ;
+        :hasCountry :India ;
+        :hasMountain_Range_Region :E_Himalaya ;
+        :Lake_Area_After_Flood 22453.0 ;
+        :Lake_area 19610.0 ;
+        :Lake_perimeter 597.0 ;
+        :Lake_perimeter_After_Flood 660.0 ;
+        :hasFloodDate "2010-10-08"^^xsd:date ;
+        :hasLatitude 33.01901 ;
+        :hasLongitude 78.487766 ;
+        rdfs:comment "Impact: Hydropower station damaged" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Pakistan
+:Pakistan rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Pamir
+:Pamir rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Rajururi
+:Rajururi rdf:type owl:NamedIndividual ,
+                   :GlacierLake ,
+                   :Glacier_Ice_Avalanche ,
+                   :MoraineDammedLake ;
+          :Lake_elevation 6000.0 ;
+          :Lake_expansion_rate 0.01 ;
+          :Lake_perimeter 0.1 ;
+          :ParentGlacierSlope 1.0 ;
+          :SlopeOfLakeDam 6.0 ;
+          :Watershed_area 0.1 ;
+          :hasLatitude -9.06 ;
+          :hasLongitude -77.68 .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Tajikistan
+:Tajikistan rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/Toguz_Bulak_glacial_lake
+:Toguz_Bulak_glacial_lake rdf:type owl:NamedIndividual ,
+                                   :MoraineDammedLake ;
+                          :hasCountry :Kyrgyzstan ;
+                          :hasMountain_Range_Region :Karakoram ;
+                          :Lake_Area_After_Flood 28382.0 ;
+                          :Lake_area 30330.0 ;
+                          :Lake_perimeter 830.0 ;
+                          :Lake_perimeter_After_Flood 804.0 ;
+                          :hasFloodDate "2019-08-08"^^xsd:date ;
+                          :hasLatitude 41.977646 ;
+                          :hasLongitude 77.266932 ;
+                          rdfs:comment "damaged two bridges; destroyed pastures and parts of a road in Bokonbaev" .
+
+
+###  http://www.semanticweb.org/jay/ontologies/2024/8/janhavi/W_Tien_Shan
+:W_Tien_Shan rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :CirqueLake
+                :GlacialValleyLake
+                :OtherGlacialErosionLake
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Dam_Failure
+                :Earthquake
+                :Glacier_Ice_Avalanche
+                :Intense_Precipitation
+                :Severe_Temperature_Rise
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :EndMoraineDammedLake
+                :LateralMoraineDammedLake
+                :MoraineThawLake
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :HighRisk
+                :LowRisk
+                :MediumRisk
+                :VeryHighRisk
+                :VeryLowRisk
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Gya
+                        :L2
+                        :L3
+                        :L4
+                        :Rajururi
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

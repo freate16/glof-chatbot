@@ -1,0 +1,8 @@
+streamlit
+rdflib
+sentence-transformers
+torch
+transformers
+ollama
+openai
+dotenv
